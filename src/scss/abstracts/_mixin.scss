@@ -1,0 +1,11 @@
+@mixin boxSet($width, $height) {
+  width: $width;
+  height: $height;
+  border-radius: 10px;
+  border: 2px solid $hanteo-gray;
+}
+@mixin fontSet($size, $fontWeignt: "normal", $color) {
+  font-size: $size;
+  font-weight: $fontWeignt;
+  color: $color;
+}
