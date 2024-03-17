@@ -1,7 +1,7 @@
 import "./homepage.scss";
 
 const Homepage = () => {
-  return <div className="hi">홈페이지</div>;
+  return <>홈페이지</>;
 };
 
 export default Homepage;

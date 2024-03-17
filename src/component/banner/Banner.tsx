@@ -23,7 +23,7 @@ const Banner = () => {
             <a href={item.href} target="_blank">
               <img src={item.src} className="banner-image" />
               <div className="banner-contents-wrapper">
-                <div className="banner-contents-text">
+                <div>
                   <span className="banner-contents-title">{item.title}</span>
                   <br />
                   <span className="banner-contents-duration">
@@ -36,7 +36,6 @@ const Banner = () => {
           </SwiperSlide>
         ))}
       </Swiper>
-      <div>ㅋㅋ</div>
     </>
   );
 };

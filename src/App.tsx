@@ -1,5 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import Navbar from "./component/layout/navbar/Navbar";
+import Banner from "./component/banner/Banner";
 import Homepage from "./pages/homepage/Homepage";
 import Whookpage from "./pages/whook/Whookpage";
 import EventPage from "./pages/event/EventPage";
@@ -12,6 +13,7 @@ function App() {
   return (
     <>
       <Navbar />
+      <Banner />
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path="/whook" element={<Whookpage />} />
