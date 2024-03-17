@@ -1,0 +1,24 @@
+.header-navbar {
+  width: 100%;
+  background-color: $hanteo-pink;
+  ul {
+    display: flex;
+    li {
+      margin: 7.5px;
+      a {
+        text-decoration: none;
+        color: black;
+        font-size: 20px;
+        font-weight: bold;
+
+        &:hover {
+          color: gray; // 이 부분은 필요에 따라 변경할 수 있습니다.
+        }
+
+        &.active {
+          color: white; // 활성 상태일 때 글자 색을 흰색으로 설정합니다.
+        }
+      }
+    }
+  }
+}
