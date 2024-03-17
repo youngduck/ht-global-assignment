@@ -1,29 +1,47 @@
+import { useState } from "react";
+import { NavLink, useNavigate } from "react-router-dom";
+import icons from "../../../assets/icons";
 import "./navbar.scss";
-import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const links = ["/", "/whook", "/event", "/news", "/store", "/charge"];
+  const navigate = useNavigate();
+
+  const handleNextClick = async () => {
+    const nextIndex = (currentIndex + 1) % links.length;
+    setCurrentIndex(nextIndex);
+    navigate(links[nextIndex]);
+  };
+
+  const handlePrevClick = async () => {
+    const prevIndex = (currentIndex - 1 + links.length) % links.length;
+    setCurrentIndex(prevIndex);
+    navigate(links[prevIndex]);
+  };
+
+  const handleNavLinkClick = async (index: number) => {
+    setCurrentIndex(index);
+    navigate(links[index]);
+  };
+
   return (
     <nav className="header-navbar">
       <ul>
-        <li>
-          <NavLink to="/">차트</NavLink>
-        </li>
-        <li>
-          <NavLink to="/whook">Whook</NavLink>
-        </li>
-        <li>
-          <NavLink to="/event">이벤트</NavLink>
-        </li>
-        <li>
-          <NavLink to="/news">뉴스</NavLink>
-        </li>
-        <li>
-          <NavLink to="/store">스토어</NavLink>
-        </li>
-        <li>
-          <NavLink to="/charge">충전소</NavLink>
-        </li>
+        {links.map((link, index) => (
+          <li key={link}>
+            <NavLink to={link} onClick={() => handleNavLinkClick(index)}>
+              {link === "/" ? "차트" : link.substring(1).toUpperCase()}
+            </NavLink>
+          </li>
+        ))}
       </ul>
+      <button className="scroll-button header-left" onClick={handlePrevClick}>
+        {icons.leftArrow}
+      </button>
+      <button className="scroll-button header-right" onClick={handleNextClick}>
+        {icons.rightArrow}
+      </button>
     </nav>
   );
 };
