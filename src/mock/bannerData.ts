@@ -1,6 +1,6 @@
-import htaward from "@assets/images/htmusicaward.jpg";
-import news from "@assets/images/hanteomusicaward.jpg";
-import whosfan from "@assets/images/whosfan.jpg";
+import htaward from "@assets/images/banner/htmusicaward.jpg";
+import whosfan from "@assets/images/banner/whosfan.jpg";
+import htchart from "@assets/images/banner/htchart.png";
 
 interface IBannerData {
   src: string;
@@ -32,8 +32,8 @@ export const bannerDatas: IBannerData[] = [
     },
   },
   {
-    src: news,
-    title: "[한터뉴스] 한터뉴스 최신소식 보러가기",
+    src: htchart,
+    title: "[한터차트] 국가별 차트 OPEN",
     href: "https://www.hanteonews.com/",
     duration: {
       startDate: "2024-05-01",
