@@ -19,3 +19,13 @@ export interface IBannerData {
     endDate: String;
   };
 }
+
+export interface IWhook {
+  singer: string;
+  idx: number;
+}
+
+export interface IEvent {
+  title: string;
+  content: string;
+}
