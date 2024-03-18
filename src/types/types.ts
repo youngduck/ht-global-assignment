@@ -3,7 +3,7 @@ export interface IChart {
   title: string;
   id?: string;
   rank: number;
-  content: string;
+  content?: string;
 }
 
 export interface IResponseData {
