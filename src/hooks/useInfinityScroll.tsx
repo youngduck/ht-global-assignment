@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
-import type { IChart } from "@/types/types";
+// import type { IChart } from "@/types/types";
 
 const useChartData = (fetchFunction: any, initialPage = 1) => {
-  const [dataSource, setDataSource] = useState<IChart[]>([]);
+  const [dataSource, setDataSource] = useState<any[]>([]);
   const [page, setPage] = useState(initialPage);
   const [hasMore, setHasMore] = useState(true);
 
