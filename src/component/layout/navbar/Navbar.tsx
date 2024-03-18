@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { useRecoilState } from "recoil";
 import { linkState } from "@/store/atom";
 import { NavLink, useNavigate } from "react-router-dom";
@@ -12,6 +11,7 @@ const Navbar = () => {
   const navigate = useNavigate();
 
   const [{ x }, set] = useSpring(() => ({ x: 0 }));
+  console.log(x);
 
   const bind = useGesture({
     onDrag: ({ down, movement: [mx] }) => {

@@ -15,7 +15,7 @@ const GestureProvider = ({ children }: IgestureProvider) => {
   const navigate = useNavigate();
 
   const [{ x }, set] = useSpring(() => ({ x: 0 }));
-
+  console.log(x);
   const bind = useGesture({
     onDrag: ({ down, movement: [mx] }) => {
       if (!down) {
