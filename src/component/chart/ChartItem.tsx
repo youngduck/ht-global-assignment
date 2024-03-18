@@ -3,14 +3,9 @@ import albumCover from "@assets/images/chart/albumCover/duck.png";
 import albumCover2 from "@assets/images/chart/albumCover/polarBear.png";
 import icons from "@/assets/icons";
 import { useState } from "react";
+import type { IChart } from "@/types/types";
 
-interface IChartItem {
-  singer: string;
-  title: string;
-  rank: number;
-}
-
-const ChartItem: React.FC<IChartItem> = ({ singer, title, rank }) => {
+const ChartItem: React.FC<IChart> = ({ singer, title, rank }) => {
   const [check, setCheck] = useState(false);
   const handleHeartClick = () => {
     setCheck(!check);

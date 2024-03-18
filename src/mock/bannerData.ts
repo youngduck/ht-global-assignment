@@ -1,16 +1,7 @@
 import htaward from "@assets/images/banner/htmusicaward.jpg";
 import whosfan from "@assets/images/banner/whosfan.jpg";
 import htchart from "@assets/images/banner/htchart.png";
-
-interface IBannerData {
-  src: string;
-  title: string;
-  href: string;
-  duration: {
-    startDate: String;
-    endDate: String;
-  };
-}
+import type { IBannerData } from "@/types/types";
 
 export const bannerDatas: IBannerData[] = [
   {
