@@ -1,6 +1,7 @@
 .header-navbar {
   width: 100%;
-  background-color: $hanteo-pink;
+  height: 40px;
+  background-color: $hanteo-hotpink;
   position: relative; // 좌우 버튼을 네비게이션 바 내에 위치시킵니다.
   ul {
     display: flex;
