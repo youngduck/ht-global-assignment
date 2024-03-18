@@ -1,0 +1,14 @@
+.loading-wrapper {
+  //   @include boxSet(
+  //     $chartItem-width,
+  //     $chartItem-height,
+  //     $hanteo-hotpink,
+  //     10px auto
+  //   );
+  text-align: center;
+  margin: 10px auto;
+  span {
+    @include fontSet(28px, bold);
+    color: $hanteo-hotpink;
+  }
+}
