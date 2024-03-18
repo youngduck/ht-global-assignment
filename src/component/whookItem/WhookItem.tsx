@@ -2,11 +2,7 @@ import React from "react";
 import "./whookItem.scss";
 import bts from "@assets/images/whook/bts.png";
 import blackpink from "@assets/images/whook/blackpink.webp";
-
-interface IWhook {
-  singer: string;
-  idx: number;
-}
+import type { IWhook } from "@/types/types";
 
 const WhookItem: React.FC<IWhook> = ({ singer, idx }) => {
   return (

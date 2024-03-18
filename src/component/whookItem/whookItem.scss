@@ -2,7 +2,7 @@
   @include boxSet(
     $whookItem-width,
     $whookItem-height,
-    $hanteo-hotpink,
+    $hanteo-orange,
     10px auto
   );
   display: flex;
@@ -20,6 +20,6 @@
 .whookItem-contents {
   margin-top: 10px;
   b {
-    @include fontSet(18px, bold, $hanteo-hotpink);
+    @include fontSet(18px, bold, $hanteo-orange);
   }
 }
