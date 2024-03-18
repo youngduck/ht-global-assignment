@@ -35,3 +35,20 @@ export const fetchWhookData = async (page: number) => {
     return { data: [] };
   }
 };
+
+export const fetchEventData = async (page: number) => {
+  try {
+    const response = await fetch(baseUrl + "/event?_page=" + page);
+
+    if (!response.ok) {
+      throw new Error("Failed to fetch data");
+    }
+
+    const responseData: IResponseData = await response.json();
+    const { data, next } = responseData;
+    return { data, next };
+  } catch (error) {
+    console.error("Error fetching data:", error);
+    return { data: [] };
+  }
+};
