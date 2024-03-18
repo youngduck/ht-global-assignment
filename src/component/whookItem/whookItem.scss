@@ -1,0 +1,25 @@
+.whookItem-wrapper {
+  @include boxSet(
+    $whookItem-width,
+    $whookItem-height,
+    $hanteo-orange,
+    10px auto
+  );
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0;
+}
+
+.whookItem-img {
+  width: 130px;
+  height: 130px;
+}
+
+.whookItem-contents {
+  margin-top: 10px;
+  b {
+    @include fontSet(18px, bold, $hanteo-orange);
+  }
+}

@@ -1,0 +1,43 @@
+.chartItem-wrapper {
+  display: flex;
+  align-items: center;
+  @include boxSet(
+    $chartItem-width,
+    $chartItem-height,
+    $hanteo-hotpink,
+    10px auto
+  );
+
+  .chartItem-img {
+    margin: 0 6px;
+    width: 48px;
+    height: 48px;
+  }
+  .chartItem-rank {
+    margin: 0 5px;
+    @include centerFlexColumn(center);
+    @include fontSet(16px, bold);
+    .chartItem-rank-change {
+      @include fontSet(14px, normal);
+    }
+  }
+
+  .chartItem-song {
+    padding: 0 10px;
+    width: 295px;
+    @include centerFlexColumn(normal);
+    .chartItem-title {
+      @include fontSet(16px, bold);
+    }
+    .chartItem-singer {
+      @include fontSet(14px, normal);
+    }
+  }
+
+  .chartItem-heart {
+    @include centerFlexColumn(center);
+    svg {
+      fill: $hanteo-hotpink;
+    }
+  }
+}

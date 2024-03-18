@@ -1,24 +1,53 @@
 .header-navbar {
   width: 100%;
-  background-color: $hanteo-pink;
+  height: 40px;
+  background-color: $hanteo-hotpink;
+  position: relative; // 좌우 버튼을 네비게이션 바 내에 위치시킵니다.
   ul {
     display: flex;
+    justify-content: center;
     li {
-      margin: 7.5px;
+      margin: 7px;
       a {
         text-decoration: none;
         color: black;
-        font-size: 20px;
+        font-size: 16px;
         font-weight: bold;
 
         &:hover {
-          color: gray; // 이 부분은 필요에 따라 변경할 수 있습니다.
+          color: gray;
         }
 
         &.active {
-          color: white; // 활성 상태일 때 글자 색을 흰색으로 설정합니다.
+          color: white;
         }
       }
     }
+  }
+
+  .scroll-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: none;
+    background: transparent;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+
+    svg {
+      width: 16px;
+      height: 16px;
+    }
+  }
+  .header-left {
+    left: 2px;
+  }
+  .header-right {
+    right: 2px;
+  }
+
+  &:hover .scroll-button {
+    display: inline-block;
   }
 }

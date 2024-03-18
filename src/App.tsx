@@ -1,5 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import Navbar from "./component/layout/navbar/Navbar";
+import Banner from "./component/banner/Banner";
+import GestureProvider from "./component/provider/GestureProvider";
 import Homepage from "./pages/homepage/Homepage";
 import Whookpage from "./pages/whook/Whookpage";
 import EventPage from "./pages/event/EventPage";
@@ -12,15 +14,18 @@ function App() {
   return (
     <>
       <Navbar />
-      <Routes>
-        <Route path="/" element={<Homepage />} />
-        <Route path="/whook" element={<Whookpage />} />
-        <Route path="/event" element={<EventPage />} />
-        <Route path="/news" element={<Newspage />} />
-        <Route path="/store" element={<Storepage />} />
-        <Route path="/charge" element={<Chargepage />} />
-        <Route path="/*" element={<NotFound />} />
-      </Routes>
+      <Banner />
+      <GestureProvider>
+        <Routes>
+          <Route path="/" element={<Homepage />} />
+          <Route path="/whook" element={<Whookpage />} />
+          <Route path="/event" element={<EventPage />} />
+          <Route path="/news" element={<Newspage />} />
+          <Route path="/store" element={<Storepage />} />
+          <Route path="/charge" element={<Chargepage />} />
+          <Route path="/*" element={<NotFound />} />
+        </Routes>
+      </GestureProvider>
     </>
   );
 }

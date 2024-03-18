@@ -1,0 +1,25 @@
+@mixin boxSet($width, $height, $border-color, $margin) {
+  width: $width;
+  height: $height;
+  border-radius: 10px;
+  border: 2px solid $border-color;
+  margin: $margin;
+}
+
+@mixin centerFlexColumn($align-items) {
+  display: flex;
+  flex-direction: column;
+  align-items: $align-items;
+}
+
+@mixin fontSet($size, $fontWeignt, $color: black) {
+  font-size: $size;
+  font-weight: $fontWeignt;
+  color: $color;
+}
+
+@mixin categoryHeaderFont($color) {
+  font-size: 32px;
+  font-weight: bold;
+  color: $color;
+}

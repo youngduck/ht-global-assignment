@@ -1,13 +1,16 @@
-import { useState } from "react";
-import { useRecoilState } from "recoil";
-import { linkState } from "@/store/atom";
-import { NavLink, useNavigate } from "react-router-dom";
+import { ReactNode } from "react";
 import { useGesture } from "react-use-gesture";
 import { animated, useSpring } from "react-spring";
-import "./navbar.scss";
+import { useRecoilState } from "recoil";
+import { linkState } from "@/store/atom";
 import { links } from "@/constants/links";
+import { useNavigate } from "react-router-dom";
 
-const Navbar = () => {
+interface IgestureProvider {
+  children: ReactNode;
+}
+
+const GestureProvider = ({ children }: IgestureProvider) => {
   const [rstate, setRstate] = useRecoilState(linkState);
   const navigate = useNavigate();
 
@@ -31,19 +34,6 @@ const Navbar = () => {
     },
   });
 
-  return (
-    <animated.nav {...bind()} className="header-navbar">
-      <ul>
-        {links.map((link: string, index: number) => (
-          <li key={link}>
-            <NavLink to={link} onClick={() => setRstate(index)}>
-              {link === "/" ? "차트" : link.substring(1).toUpperCase()}
-            </NavLink>
-          </li>
-        ))}
-      </ul>
-    </animated.nav>
-  );
+  return <animated.nav {...bind()}>{children}</animated.nav>;
 };
-
-export default Navbar;
+export default GestureProvider;
