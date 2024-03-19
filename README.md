@@ -1,38 +1,95 @@
 ## 🌴 로컬 실행방법
+```
+ git clone https://github.com/youngduck/ht-global-assignment.git
+```
 
-- git clone https://github.com/youngduck/ht-global-assignment.git
-- pnpm install
-- pnpm run dev
-- http://localhost:5173/
+```
+pnpm install
+```
+
+```
+pnpm run dev
+```
+- visit http://localhost:5173/
 
 ## 🌴 결과물 링크
 
-- Github Actions: [https://ht-global-test.store/](https://ht-global-test.store/)
-- Vercel: [https://ht-global-assignment.vercel.app/](https://ht-global-assignment.vercel.app/)
-- Figma: [Figma](https://www.figma.com/file/GRikoI2OHQ0DuPNRuxWdeA/Untitled?type=design&node-id=0%3A1&mode=design&t=uhhXpL3O5pZfpy8C-1)
+### AWS 배포 사이트: [http://coding-test-assignment.s3-website.ap-northeast-2.amazonaws.com/](http://coding-test-assignment.s3-website.ap-northeast-2.amazonaws.com/)
+### Vercel 배포 사이트: [https://ht-global-assignment.vercel.app/](https://ht-global-assignment.vercel.app/)
+
+
 
 ## 🌴 주요 기술
 
 - 코어 : React,TypeScript
 - 상태관리 : Recoil
 - 스타일링 : SCSS
-- 패키지 매니저 : PNPM
+- 패키지 매니저 : Pnpm
 - 빌드 : Vite
 - CI/CD : GitHub Actions
 - Mock Server : json-server
 
 ## 🌴 확장성, 재사용성, 유지보수성을 위한 코드 구성
 
-- SCSS
+### 1. SCSS
+  - CSS 모듈화 : mixin, variables 사용
+    
+### 2. 배포전략
+- Github Action CI/CD 구축
+![file cover - 1](https://github.com/youngduck/ht-global-assignment/assets/46455370/c155a4bb-e2e4-46bf-aa38-fce331781411)
 
-  - 재사용 스타일링 전역 설정 : base, mixin, variables
-  - 개별 컴포넌트 스타일링 파일분리 : ex) banner.scss
+### 3. Hooks,동적 함수 사용 동적컨텐츠 구현
+> useInfinityScroll hooks + fetch API(apiKey.value) + 단일 컴포넌트(EventItem) => 무한스크롤 EventList 컴포넌트 구현
 
-- Hook처리를 통한 무한스크롤 컨텐츠,아이템 동적교체
+![file cover - 2](https://github.com/youngduck/ht-global-assignment/assets/46455370/e3c5e8f7-fb7b-4c96-92ab-d6e70eef0e0e)
+![image](https://github.com/youngduck/ht-global-assignment/assets/46455370/81aba9c5-c8ea-4608-a4b5-a6aa5bd63a56)
 
-  - 무한스크롤 훅 (API, 아이템 )
 
-- Navbar 데이터 추가삭제
+![안녕하세요](https://github.com/youngduck/ht-global-assignment/assets/46455370/5a657ba3-14c3-4a77-991f-357c239b5e72)
+
+
+
+### 4. fetch 함수 객체화
+ ![image](https://github.com/youngduck/ht-global-assignment/assets/46455370/acb207d0-ecdf-4b6a-9cb5-9c828cedb3a4)
+ ![image](https://github.com/youngduck/ht-global-assignment/assets/46455370/378e7afb-c807-4f72-8c5c-82d4c88395d7)
+
+
+
+
+## 🌴 src 폴더구조
+- assets
+- component
+  - banner 
+  - contents
+      - chart (item,list)
+      - whook (item,list)
+      - event (item,list)
+      - news (item,list)
+      - store (item,list)
+      - whook (item,list)
+  - layout 
+      - navbar
+  - loading
+  - provider
+- constants
+- hooks
+- mock
+- pages
+- scss
+- services
+- store
+- types
+
+
+## 🌴 구현 기능 (width: 425px 화면)
+### 카테코리 탭 클릭 이동
+![탭 클릭이동](https://github.com/youngduck/ht-global-assignment/assets/46455370/06a1f943-eeb7-4d50-b61b-480c4f189695)
+### 카테고리 좌우 슬라이드 모션이동
+![탭 모션이동](https://github.com/youngduck/ht-global-assignment/assets/46455370/7326ecfd-35b9-4f9a-ba11-4b346aa19c3c)
+### 배너 무한루프, 클릭시 외부링크 이동
+![배너무한루프,링크이동,슬라이드](https://github.com/youngduck/ht-global-assignment/assets/46455370/9635ffd0-6463-4f2a-8181-a90704af2aa7)
+### 무한 스크롤
+![무한스크롤](https://github.com/youngduck/ht-global-assignment/assets/46455370/1aa8b993-9091-4b34-a981-32d362ea5378)
 
 ## 🌴 Commit 컨벤션
 
@@ -46,87 +103,6 @@
 | init     |                 초기 세팅                  |
 | docs     |                 문서 작성                  |
 
-## 🌴 폴더 구조
 
-src
-┣ assets
-┃ ┣ images
-┃ ┃ ┣ banner
-┃ ┃ ┃ ┣ htchart.png
-┃ ┃ ┃ ┣ htmusicaward.jpg
-┃ ┃ ┃ ┗ whosfan.jpg
-┃ ┃ ┣ chart
-┃ ┃ ┃ ┗ albumCover
-┃ ┃ ┃ ┃ ┣ duck.png
-┃ ┃ ┃ ┃ ┗ polarBear.png
-┃ ┃ ┗ whook
-┃ ┃ ┃ ┣ blackpink.webp
-┃ ┃ ┃ ┗ bts.png
-┃ ┗ icons.tsx
-┣ component
-┃ ┣ banner
-┃ ┃ ┣ banner.scss
-┃ ┃ ┗ Banner.tsx
-┃ ┣ chartItem
-┃ ┃ ┣ chartItem.scss
-┃ ┃ ┗ ChartItem.tsx
-┃ ┣ eventItem
-┃ ┃ ┣ eventItem.scss
-┃ ┃ ┗ EventItem.tsx
-┃ ┣ layout
-┃ ┃ ┣ footer
-┃ ┃ ┃ ┗ Footer.tsx
-┃ ┃ ┣ header
-┃ ┃ ┃ ┗ Header.tsx
-┃ ┃ ┗ navbar
-┃ ┃ ┃ ┣ navbar.scss
-┃ ┃ ┃ ┗ Navbar.tsx
-┃ ┣ loading
-┃ ┃ ┣ loading.scss
-┃ ┃ ┗ Loading.tsx
-┃ ┣ provider
-┃ ┃ ┗ GestureProvider.tsx
-┃ ┗ whookItem
-┃ ┃ ┣ whookItem.scss
-┃ ┃ ┗ WhookItem.tsx
-┣ constants
-┃ ┗ links.ts
-┣ hooks
-┃ ┗ useInfinityScroll.tsx
-┣ mock
-┃ ┣ bannerData.ts
-┃ ┗ db.json
-┣ pages
-┃ ┣ chargepage
-┃ ┃ ┗ Chargepage.tsx
-┃ ┣ eventpage
-┃ ┃ ┣ eventPage.scss
-┃ ┃ ┗ EventPage.tsx
-┃ ┣ homepage
-┃ ┃ ┣ homepage.scss
-┃ ┃ ┗ Homepage.tsx
-┃ ┣ newspage
-┃ ┃ ┗ Newspage.tsx
-┃ ┣ notFound
-┃ ┃ ┗ NotFound.tsx
-┃ ┣ storepage
-┃ ┃ ┗ Storepage.tsx
-┃ ┗ whookpage
-┃ ┃ ┣ whookPage.scss
-┃ ┃ ┗ Whookpage.tsx
-┣ scss
-┃ ┣ abstracts
-┃ ┃ ┣ \_base.scss
-┃ ┃ ┣ \_mixin.scss
-┃ ┃ ┗ \_variables.scss
-┃ ┗ main.scss
-┣ services
-┃ ┗ api.ts
-┣ store
-┃ ┗ atom.ts
-┣ types
-┃ ┗ types.ts
-┣ App.tsx
-┣ main.tsx
-┣ Routes.tsx
-┗ vite-env.d.ts
+
+
