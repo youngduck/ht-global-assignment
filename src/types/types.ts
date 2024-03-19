@@ -27,5 +27,18 @@ export interface INews {
   title: string;
   content: string;
 }
+export interface IStore {
+  singer: string;
+}
+export interface ICharge {
+  price: number;
+  point: number;
+}
 
-export interface IResponseData extends IWhook, IEvent, IChart, INews {}
+export interface IResponseData
+  extends IWhook,
+    IEvent,
+    IChart,
+    INews,
+    IStore,
+    ICharge {}
