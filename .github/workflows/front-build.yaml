@@ -10,12 +10,6 @@ jobs:
     name: Build and Deploy
     runs-on: ubuntu-latest
     steps:
-<<<<<<< HEAD
-=======
-      -name: Install pnpm
-        run: pnpm install -g pnpm
-
->>>>>>> 380b468573e7daf86956349b43d1fe11768980e8
       - name: Checkout
         uses: actions/checkout@v3
 
