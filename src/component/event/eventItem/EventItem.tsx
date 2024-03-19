@@ -1,4 +1,3 @@
-import React from "react";
 import "./eventItem.scss";
 import type { IEvent } from "@/types/types";
 

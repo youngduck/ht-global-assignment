@@ -23,5 +23,9 @@ export interface IEvent {
   title: string;
   content: string;
 }
+export interface INews {
+  title: string;
+  content: string;
+}
 
-export interface IResponseData extends IWhook, IEvent, IChart {}
+export interface IResponseData extends IWhook, IEvent, IChart, INews {}
