@@ -1,6 +1,6 @@
 import type { IResponseData } from "@/types/types";
 
-const baseUrl = "http://localhost:3000";
+const baseUrl = "https://vercel-json-server-livid.vercel.app";
 
 export const fetchChartData = async (page: number) => {
   try {
@@ -11,8 +11,7 @@ export const fetchChartData = async (page: number) => {
     }
 
     const responseData: IResponseData = await response.json();
-    const { data, next } = responseData;
-    return { data, next };
+    return responseData;
   } catch (error) {
     console.error("Error fetching data:", error);
     return { data: [] };
@@ -28,8 +27,7 @@ export const fetchWhookData = async (page: number) => {
     }
 
     const responseData: IResponseData = await response.json();
-    const { data, next } = responseData;
-    return { data, next };
+    return responseData;
   } catch (error) {
     console.error("Error fetching data:", error);
     return { data: [] };
@@ -45,8 +43,7 @@ export const fetchEventData = async (page: number) => {
     }
 
     const responseData: IResponseData = await response.json();
-    const { data, next } = responseData;
-    return { data, next };
+    return responseData;
   } catch (error) {
     console.error("Error fetching data:", error);
     return { data: [] };
