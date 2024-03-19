@@ -10,21 +10,19 @@ jobs:
     name: Build and Deploy
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: "21.4"
-          
-      -name: Setup pnpm
+      -name: Install pnpm
         run: pnpm install -g pnpm
 
-      - name: Install dependencies
-        run: pnpm install
+      - name: Checkout
+        uses: actions/checkout@v3
 
-      - name: Build application
-        run: pnpm build
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+
+      - name: install dependencies and build
+        run: pnpm install --frozen-lockfile && pnpm run build
 
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
