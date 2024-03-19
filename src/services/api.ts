@@ -10,11 +10,11 @@ export const fetchChartData = async (page: number) => {
       throw new Error("Failed to fetch data");
     }
 
-    const responseData: IResponseData = await response.json();
+    const responseData: IResponseData[] = await response.json();
     return responseData;
   } catch (error) {
     console.error("Error fetching data:", error);
-    return { data: [] };
+    return [] as IResponseData[];
   }
 };
 
@@ -26,11 +26,11 @@ export const fetchWhookData = async (page: number) => {
       throw new Error("Failed to fetch data");
     }
 
-    const responseData: IResponseData = await response.json();
+    const responseData: IResponseData[] = await response.json();
     return responseData;
   } catch (error) {
     console.error("Error fetching data:", error);
-    return { data: [] };
+    return [] as IResponseData[];
   }
 };
 
@@ -42,10 +42,10 @@ export const fetchEventData = async (page: number) => {
       throw new Error("Failed to fetch data");
     }
 
-    const responseData: IResponseData = await response.json();
+    const responseData: IResponseData[] = await response.json();
     return responseData;
   } catch (error) {
     console.error("Error fetching data:", error);
-    return { data: [] };
+    return [] as IResponseData[];
   }
 };

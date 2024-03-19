@@ -1,16 +1,3 @@
-export interface IChart {
-  singer: string;
-  title: string;
-  id?: string;
-  rank: number;
-  content?: string;
-}
-
-export interface IResponseData {
-  next: null | number;
-  data: IChart[];
-}
-
 export interface IBannerData {
   src: string;
   title: string;
@@ -19,6 +6,12 @@ export interface IBannerData {
     startDate: String;
     endDate: String;
   };
+}
+
+export interface IChart {
+  singer: string;
+  title: string;
+  rank: number;
 }
 
 export interface IWhook {
@@ -30,3 +23,5 @@ export interface IEvent {
   title: string;
   content: string;
 }
+
+export interface IResponseData extends IWhook, IEvent, IChart {}
