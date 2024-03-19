@@ -1,8 +1,6 @@
 .eventItem-wrapper {
-  width: $eventItem-width;
-  height: $eventItem-height;
   background-color: $hanteo-blue;
-  @include boxSet($eventItem-width, $eventItem-height, none, 10px 0);
+  @include boxSet($eventItem-width, $eventItem-height, none, 10px auto);
   padding: 20px;
   @include fontSet(24px, bold, white);
 }
