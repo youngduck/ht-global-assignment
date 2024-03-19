@@ -1,0 +1,10 @@
+.storeItem-wrapper {
+  background-color: $hanteo-violet;
+  @include boxSet($storeItem-width, $storeItem-height, none, 10px auto);
+  padding: 20px;
+  @include fontSet(24px, bold, white);
+}
+
+.storeItem-content {
+  @include fontSet(16px, normal, white);
+}
