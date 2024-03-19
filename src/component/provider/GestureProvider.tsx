@@ -3,7 +3,7 @@ import { useGesture } from "react-use-gesture";
 import { animated, useSpring } from "react-spring";
 import { useRecoilState } from "recoil";
 import { linkState } from "@/store/atom";
-import { links } from "@/constants/links";
+import { links } from "@/constants/constants";
 import { useNavigate } from "react-router-dom";
 
 interface IgestureProvider {
