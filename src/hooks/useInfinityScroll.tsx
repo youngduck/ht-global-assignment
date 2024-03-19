@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-// import type { IChart } from "@/types/types";
 
 const useChartData = (fetchFunction: any, initialPage = 1) => {
   const [dataSource, setDataSource] = useState<any[]>([]);
@@ -12,22 +11,20 @@ const useChartData = (fetchFunction: any, initialPage = 1) => {
 
   const fetchData = async () => {
     const result = await fetchFunction(page);
-    const { data } = result;
-    setDataSource(data);
+    setDataSource(result);
   };
 
   const fetchMoreData = async () => {
     setTimeout(async () => {
       const nextPage = page + 1;
       const result = await fetchFunction(nextPage);
-      const { data, next } = result;
 
-      if (next === null) {
+      if (result.length === 0) {
         setHasMore(false);
       }
       setPage(nextPage);
-      setDataSource((prevData) => prevData.concat(data));
-    }, 2000);
+      setDataSource((prevData) => prevData.concat(result));
+    }, 1000);
   };
 
   return { dataSource, fetchMoreData, hasMore };
