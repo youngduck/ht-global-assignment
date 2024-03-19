@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const useChartData = (fetchFunction: any, initialPage = 1) => {
+const useInfinityScroll = (fetchFunction: any, initialPage = 1) => {
   const [dataSource, setDataSource] = useState<any[]>([]);
   const [page, setPage] = useState(initialPage);
   const [hasMore, setHasMore] = useState(true);
@@ -30,4 +30,4 @@ const useChartData = (fetchFunction: any, initialPage = 1) => {
   return { dataSource, fetchMoreData, hasMore };
 };
 
-export default useChartData;
+export default useInfinityScroll;

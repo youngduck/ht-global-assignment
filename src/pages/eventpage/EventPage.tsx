@@ -1,4 +1,4 @@
-import useChartData from "@/hooks/useInfinityScroll";
+import useInfinityScroll from "@/hooks/useInfinityScroll";
 import Loading from "@/component/loading/Loading";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { fetchEventData } from "@/services/api";
@@ -6,7 +6,8 @@ import EventItem from "@/component/eventItem/EventItem";
 import "./eventPage.scss";
 
 const Eventpage = () => {
-  const { dataSource, fetchMoreData, hasMore } = useChartData(fetchEventData);
+  const { dataSource, fetchMoreData, hasMore } =
+    useInfinityScroll(fetchEventData);
 
   return (
     <>

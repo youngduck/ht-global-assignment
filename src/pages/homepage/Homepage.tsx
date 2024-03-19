@@ -1,4 +1,4 @@
-import useChartData from "@/hooks/useInfinityScroll";
+import useInfinityScroll from "@/hooks/useInfinityScroll";
 import ChartItem from "@/component/chartItem/ChartItem";
 import Loading from "@/component/loading/Loading";
 import InfiniteScroll from "react-infinite-scroll-component";
@@ -6,7 +6,8 @@ import { fetchChartData } from "@/services/api";
 import "./homepage.scss";
 
 const Homepage = () => {
-  const { dataSource, fetchMoreData, hasMore } = useChartData(fetchChartData);
+  const { dataSource, fetchMoreData, hasMore } =
+    useInfinityScroll(fetchChartData);
 
   return (
     <>

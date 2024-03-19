@@ -1,4 +1,4 @@
-import useChartData from "@/hooks/useInfinityScroll";
+import useInfinityScroll from "@/hooks/useInfinityScroll";
 import Loading from "@/component/loading/Loading";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { fetchWhookData } from "@/services/api";
@@ -6,7 +6,8 @@ import WhookItem from "@/component/whookItem/WhookItem";
 import "./whookPage.scss";
 
 const Whookpage = () => {
-  const { dataSource, fetchMoreData, hasMore } = useChartData(fetchWhookData);
+  const { dataSource, fetchMoreData, hasMore } =
+    useInfinityScroll(fetchWhookData);
 
   return (
     <>
