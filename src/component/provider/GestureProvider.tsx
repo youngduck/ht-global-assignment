@@ -19,11 +19,11 @@ const GestureProvider = ({ children }: IgestureProvider) => {
   const bind = useGesture({
     onDrag: ({ down, movement: [mx] }) => {
       if (!down) {
-        if (mx > 5) {
+        if (mx > 100) {
           const prevIndex = (rstate - 1 + links.length) % links.length;
           setRstate(prevIndex);
           navigate(links[prevIndex]);
-        } else if (mx < -5) {
+        } else if (mx < -100) {
           const nextIndex = (rstate + 1) % links.length;
           setRstate(nextIndex);
           navigate(links[nextIndex]);
