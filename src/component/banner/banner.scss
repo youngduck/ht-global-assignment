@@ -1,0 +1,71 @@
+.swiper {
+  margin: 15px auto;
+  width: $contents-width;
+  height: $contents-height;
+  position: relative;
+}
+
+.swiper-slide {
+  border-radius: 10px;
+  width: 100%;
+  height: $contents-height - 30px;
+  overflow: hidden;
+  // box-shadow: 2px 2px 2px gray;
+  border: 1px solid $hanteo-gray;
+  border-radius: 10px;
+}
+
+.swiper-slide a {
+  color: black;
+}
+
+.banner-image {
+  width: 100%;
+  height: 100%;
+  margin-top: -20px;
+  border-radius: 10px 10px 0 0;
+  object-fit: cover;
+}
+
+.banner-contents-wrapper {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 50px;
+  padding: 5px 15px;
+  bottom: 0px;
+  background-color: white;
+  border-radius: 0 0 10px 10px;
+}
+
+.banner-contents-title {
+  font-size: 16px;
+  width: 250px;
+  font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-flex;
+  text-overflow: ellipsis;
+}
+
+.banner-contents-duration {
+  font-size: 12px;
+}
+
+.banner-contents-button {
+  display: inline;
+  align-items: center;
+  border: 2px solid $hanteo-hotpink;
+  font-size: 14px;
+  line-height: 28px;
+  font-weight: 700;
+  color: $hanteo-hotpink;
+  margin: 5px 0px;
+  padding: 0px 10px;
+  border-radius: 100px;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: $hanteo-hotpink;
+}

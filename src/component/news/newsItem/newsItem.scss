@@ -1,0 +1,12 @@
+.newsItem-wrapper {
+  width: $newsItem-width;
+  height: $newsItem-height;
+  background-color: $hanteo-green;
+  @include boxSet($newsItem-width, $newsItem-height, none, 10px auto);
+  padding: 20px;
+  @include fontSet(24px, bold, white);
+}
+
+.newsItem-content {
+  @include fontSet(16px, normal, white);
+}

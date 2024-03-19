@@ -1,30 +1,48 @@
+import { useRecoilState } from "recoil";
+import { linkState } from "@/store/atom";
+import { NavLink, useNavigate } from "react-router-dom";
+import { useGesture } from "react-use-gesture";
+import { animated, useSpring } from "react-spring";
+import { links } from "@/constants/constants";
 import "./navbar.scss";
-import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
+  const [rstate, setRstate] = useRecoilState(linkState);
+  const navigate = useNavigate();
+
+  const [{ x }, set] = useSpring(() => ({ x: 0 }));
+  console.log(x);
+
+  const bind = useGesture({
+    onDrag: ({ down, movement: [mx] }) => {
+      if (!down) {
+        if (mx > 5) {
+          const prevIndex = (rstate - 1 + links.length) % links.length;
+          setRstate(prevIndex);
+          navigate(links[prevIndex]);
+        } else if (mx < -5) {
+          const nextIndex = (rstate + 1) % links.length;
+          setRstate(nextIndex);
+          navigate(links[nextIndex]);
+        }
+      } else {
+        set({ x: mx });
+      }
+    },
+  });
+
   return (
-    <nav className="header-navbar">
+    <animated.nav {...bind()} className="header-navbar">
       <ul>
-        <li>
-          <NavLink to="/">차트</NavLink>
-        </li>
-        <li>
-          <NavLink to="/whook">Whook</NavLink>
-        </li>
-        <li>
-          <NavLink to="/event">이벤트</NavLink>
-        </li>
-        <li>
-          <NavLink to="/news">뉴스</NavLink>
-        </li>
-        <li>
-          <NavLink to="/store">스토어</NavLink>
-        </li>
-        <li>
-          <NavLink to="/charge">충전소</NavLink>
-        </li>
+        {links.map((link: string, index: number) => (
+          <li key={link}>
+            <NavLink to={link} onClick={() => setRstate(index)}>
+              {link === "/" ? "차트" : link.substring(1).toUpperCase()}
+            </NavLink>
+          </li>
+        ))}
       </ul>
-    </nav>
+    </animated.nav>
   );
 };
 

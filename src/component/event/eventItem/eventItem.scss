@@ -1,0 +1,10 @@
+.eventItem-wrapper {
+  background-color: $hanteo-blue;
+  @include boxSet($eventItem-width, $eventItem-height, none, 10px auto);
+  padding: 20px;
+  @include fontSet(24px, bold, white);
+}
+
+.eventItem-content {
+  @include fontSet(16px, normal, white);
+}
