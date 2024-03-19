@@ -1,5 +1,13 @@
+import "./storepage.scss";
+import StoreList from "@/component/store/storeList/StoreList";
+
 const Storepage = () => {
-  return <div>스토어</div>;
+  return (
+    <>
+      <h1 className="storePage-header">굿즈 구매하러가기</h1>
+      <StoreList />
+    </>
+  );
 };
 
 export default Storepage;
