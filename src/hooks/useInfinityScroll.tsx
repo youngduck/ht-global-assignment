@@ -1,7 +1,11 @@
 import { useState, useEffect } from "react";
+import type { IResponseData } from "@/types/types";
 
-const useInfinityScroll = (fetchFunction: any, initialPage = 1) => {
-  const [dataSource, setDataSource] = useState<any[]>([]);
+const useInfinityScroll = (
+  fetchFunction: (page: number) => Promise<IResponseData[]>,
+  initialPage = 1
+) => {
+  const [dataSource, setDataSource] = useState<IResponseData[]>([]);
   const [page, setPage] = useState(initialPage);
   const [hasMore, setHasMore] = useState(true);
 
