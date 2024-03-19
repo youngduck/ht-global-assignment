@@ -3,8 +3,8 @@ import { linkState } from "@/store/atom";
 import { NavLink, useNavigate } from "react-router-dom";
 import { useGesture } from "react-use-gesture";
 import { animated, useSpring } from "react-spring";
+import { links } from "@/constants/constants";
 import "./navbar.scss";
-import { links } from "@/constants/links";
 
 const Navbar = () => {
   const [rstate, setRstate] = useRecoilState(linkState);
