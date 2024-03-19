@@ -1,12 +1,12 @@
 import useInfinityScroll from "@/hooks/useInfinityScroll";
 import Loading from "@/component/loading/Loading";
 import InfiniteScroll from "react-infinite-scroll-component";
-import { fetchWhookData } from "@/services/api";
-import WhookItem from "@/component/whook/whookItem/WhookItem";
+import { fetchEventData } from "@/services/api";
+import EventItem from "@/component/contents/event/eventItem/EventItem";
 
-const WhookList = () => {
+const EventList = () => {
   const { dataSource, fetchMoreData, hasMore } =
-    useInfinityScroll(fetchWhookData);
+    useInfinityScroll(fetchEventData);
   return (
     <InfiniteScroll
       dataLength={dataSource.length}
@@ -15,10 +15,10 @@ const WhookList = () => {
       loader={<Loading />}
     >
       {dataSource.map((item, idx) => (
-        <WhookItem key={idx} idx={idx} singer={item.singer} />
+        <EventItem key={idx} title={item.title} content={item.content} />
       ))}
     </InfiniteScroll>
   );
 };
 
-export default WhookList;
+export default EventList;

@@ -1,4 +1,4 @@
-import WhookList from "@/component/whook/whookList/WhookList";
+import WhookList from "@/component/contents/whook/whookList/WhookList";
 import "./whookPage.scss";
 
 const Whookpage = () => {

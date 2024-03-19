@@ -1,5 +1,5 @@
 import "./storepage.scss";
-import StoreList from "@/component/store/storeList/StoreList";
+import StoreList from "@/component/contents/store/storeList/StoreList";
 
 const Storepage = () => {
   return (

@@ -1,13 +1,12 @@
 import useInfinityScroll from "@/hooks/useInfinityScroll";
-import ChartItem from "@/component/chart/chartItem/ChartItem";
 import Loading from "@/component/loading/Loading";
 import InfiniteScroll from "react-infinite-scroll-component";
-import { fetchChartData } from "@/services/api";
+import { fetchWhookData } from "@/services/api";
+import WhookItem from "@/component/contents/whook/whookItem/WhookItem";
 
-const ChartList = () => {
+const WhookList = () => {
   const { dataSource, fetchMoreData, hasMore } =
-    useInfinityScroll(fetchChartData);
-
+    useInfinityScroll(fetchWhookData);
   return (
     <InfiniteScroll
       dataLength={dataSource.length}
@@ -16,15 +15,10 @@ const ChartList = () => {
       loader={<Loading />}
     >
       {dataSource.map((item, idx) => (
-        <ChartItem
-          key={idx}
-          rank={idx + 1}
-          singer={item.singer}
-          title={item.title}
-        />
+        <WhookItem key={idx} idx={idx} singer={item.singer} />
       ))}
     </InfiniteScroll>
   );
 };
 
-export default ChartList;
+export default WhookList;

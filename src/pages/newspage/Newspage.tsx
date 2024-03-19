@@ -1,5 +1,5 @@
 import "./newspage.scss";
-import NewsList from "@/component/news/newsList/NewsList";
+import NewsList from "@/component/contents/news/newsList/NewsList";
 
 const Newspage = () => {
   return (

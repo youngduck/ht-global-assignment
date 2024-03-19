@@ -1,5 +1,5 @@
 import "./chargepage.scss";
-import ChargeList from "@/component/charge/chargeList/ChargeList";
+import ChargeList from "@/component/contents/charge/chargeList/ChargeList";
 
 const Chargepage = () => {
   return (

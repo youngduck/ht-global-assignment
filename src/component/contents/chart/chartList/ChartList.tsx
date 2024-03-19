@@ -1,12 +1,13 @@
 import useInfinityScroll from "@/hooks/useInfinityScroll";
+import ChartItem from "@/component/contents/chart/chartItem/ChartItem";
 import Loading from "@/component/loading/Loading";
 import InfiniteScroll from "react-infinite-scroll-component";
-import { fetchEventData } from "@/services/api";
-import EventItem from "@/component/event/eventItem/EventItem";
+import { fetchChartData } from "@/services/api";
 
-const EventList = () => {
+const ChartList = () => {
   const { dataSource, fetchMoreData, hasMore } =
-    useInfinityScroll(fetchEventData);
+    useInfinityScroll(fetchChartData);
+
   return (
     <InfiniteScroll
       dataLength={dataSource.length}
@@ -15,10 +16,15 @@ const EventList = () => {
       loader={<Loading />}
     >
       {dataSource.map((item, idx) => (
-        <EventItem key={idx} title={item.title} content={item.content} />
+        <ChartItem
+          key={idx}
+          rank={idx + 1}
+          singer={item.singer}
+          title={item.title}
+        />
       ))}
     </InfiniteScroll>
   );
 };
 
-export default EventList;
+export default ChartList;

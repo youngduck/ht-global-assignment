@@ -1,4 +1,4 @@
-import EventList from "@/component/event/eventList/EventList";
+import EventList from "@/component/contents/event/eventList/EventList";
 import "./eventPage.scss";
 
 const Eventpage = () => {
