@@ -1,0 +1,11 @@
+.chargeItem-wrapper {
+  background-color: $hanteo-yellow;
+  @include boxSet($chargeItem-width, $chargeItem-height, none, 10px auto);
+  padding: 20px;
+  @include fontSet(24px, bold, black);
+  text-align: right;
+}
+
+.chargeItem-content {
+  @include fontSet(20px, bold, black);
+}
