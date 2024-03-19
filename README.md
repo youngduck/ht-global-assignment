@@ -4,6 +4,10 @@
 ```
 
 ```
+cd ./ht-global-assignment
+```
+
+```
 pnpm install
 ```
 
@@ -82,7 +86,7 @@ pnpm run dev
 
 
 ## 🌴 구현 기능 (width: 425px 화면)
-### 카테코리 탭 클릭 이동
+### 카테고리 탭 클릭 이동
 ![탭 클릭이동](https://github.com/youngduck/ht-global-assignment/assets/46455370/06a1f943-eeb7-4d50-b61b-480c4f189695)
 ### 카테고리 좌우 슬라이드 모션이동
 ![탭 모션이동](https://github.com/youngduck/ht-global-assignment/assets/46455370/7326ecfd-35b9-4f9a-ba11-4b346aa19c3c)
