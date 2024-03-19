@@ -1,6 +1,5 @@
 import type { IResponseData } from "@/types/types";
-
-const baseUrl = "https://vercel-json-server-livid.vercel.app";
+import { baseUrl } from "@/constants/links";
 
 export const fetchChartData = async (page: number) => {
   try {
