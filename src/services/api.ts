@@ -1,97 +1,26 @@
 import type { IResponseData } from "@/types/types";
-import { baseUrl } from "@/constants/links";
+import { apiKey, serverUrl } from "@/constants/constants";
 
-export const fetchChartData = async (page: number) => {
+const fetchData = async (
+  apiKey: string,
+  page: number
+): Promise<IResponseData[]> => {
   try {
-    const response = await fetch(baseUrl + "/chart?_page=" + page);
-
+    const response = await fetch(`${serverUrl}${apiKey}${page}`);
     if (!response.ok) {
       throw new Error("Failed to fetch data");
     }
-
     const responseData: IResponseData[] = await response.json();
     return responseData;
   } catch (error) {
     console.error("Error fetching data:", error);
-    return [] as IResponseData[];
+    return [];
   }
 };
 
-export const fetchWhookData = async (page: number) => {
-  try {
-    const response = await fetch(baseUrl + "/whook?_page=" + page);
-
-    if (!response.ok) {
-      throw new Error("Failed to fetch data");
-    }
-
-    const responseData: IResponseData[] = await response.json();
-    return responseData;
-  } catch (error) {
-    console.error("Error fetching data:", error);
-    return [] as IResponseData[];
-  }
-};
-
-export const fetchEventData = async (page: number) => {
-  try {
-    const response = await fetch(baseUrl + "/event?_page=" + page);
-
-    if (!response.ok) {
-      throw new Error("Failed to fetch data");
-    }
-
-    const responseData: IResponseData[] = await response.json();
-    return responseData;
-  } catch (error) {
-    console.error("Error fetching data:", error);
-    return [] as IResponseData[];
-  }
-};
-
-export const fetchNewsData = async (page: number) => {
-  try {
-    const response = await fetch(baseUrl + "/news?_page=" + page);
-
-    if (!response.ok) {
-      throw new Error("Failed to fetch data");
-    }
-
-    const responseData: IResponseData[] = await response.json();
-    return responseData;
-  } catch (error) {
-    console.error("Error fetching data:", error);
-    return [] as IResponseData[];
-  }
-};
-export const fetchStoreData = async (page: number) => {
-  try {
-    const response = await fetch(baseUrl + "/store?_page=" + page);
-
-    if (!response.ok) {
-      throw new Error("Failed to fetch data");
-    }
-
-    const responseData: IResponseData[] = await response.json();
-    return responseData;
-  } catch (error) {
-    console.error("Error fetching data:", error);
-    return [] as IResponseData[];
-  }
-};
-
-export const fetchChargeData = async (page: number) => {
-  try {
-    const response = await fetch(baseUrl + "/charge?_page=" + page);
-
-    if (!response.ok) {
-      throw new Error("Failed to fetch data");
-    }
-
-    const responseData: IResponseData[] = await response.json();
-    return responseData;
-  } catch (error) {
-    console.error("Error fetching data:", error);
-    return [] as IResponseData[];
-  }
-};
+export const fetchChartData = (page: number) => fetchData(apiKey.chart, page);
+export const fetchWhookData = (page: number) => fetchData(apiKey.whook, page);
+export const fetchEventData = (page: number) => fetchData(apiKey.event, page);
+export const fetchNewsData = (page: number) => fetchData(apiKey.news, page);
+export const fetchStoreData = (page: number) => fetchData(apiKey.store, page);
+export const fetchChargeData = (page: number) => fetchData(apiKey.charge, page);
