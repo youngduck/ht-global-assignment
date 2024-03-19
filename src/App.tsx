@@ -3,11 +3,11 @@ import Navbar from "./component/layout/navbar/Navbar";
 import Banner from "./component/banner/Banner";
 import GestureProvider from "./component/provider/GestureProvider";
 import Homepage from "./pages/homepage/Homepage";
-import Whookpage from "./pages/whook/Whookpage";
-import EventPage from "./pages/event/EventPage";
-import Newspage from "./pages/news/Newspage";
-import Storepage from "./pages/store/Storepage";
-import Chargepage from "./pages/charge/Chargepage";
+import Whookpage from "./pages/whookpage/Whookpage";
+import EventPage from "./pages/eventpage/EventPage";
+import Newspage from "./pages/newspage/Newspage";
+import Storepage from "./pages/storepage/Storepage";
+import Chargepage from "./pages/chargepage/Chargepage";
 import NotFound from "./pages/notFound/NotFound";
 
 function App() {
